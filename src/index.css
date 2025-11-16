@@ -18,6 +18,8 @@
   --color-my-text-cta-background: hsl(227, 35%, 25%); /* dark des blue */
 
   --shadow-myShadow: 0px 10px 20px 10px hsl(224, 65%, 95%);
+
+  --breakpoint-md: 900px;
 }
 
 * {

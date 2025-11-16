@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { SliderContext } from "./SliderComponent";
 import { motion } from "motion/react";
+import clsx from "clsx";
 
 export default function Billing() {
   const sliderContext = useContext(SliderContext);
@@ -12,10 +13,16 @@ export default function Billing() {
   const { changeBillingType, billingType } = sliderContext;
 
   return (
-    <div className="text-my-text-grayish-blue flex items-center gap-2 text-xs">
-      <p>Monthly Billing</p>
+    <div className="flex items-center gap-2 text-xs">
+      <p
+        className={clsx(
+          ` ${billingType === 1 ? "text-my-slider-background" : "text-my-text-grayish-blue"}`,
+        )}
+      >
+        Monthly Billing
+      </p>
       <div
-        className="bg-my-toggle-background flex h-6 w-11 items-center rounded-2xl p-1"
+        className="bg-my-toggle-background flex h-6 w-11 cursor-pointer items-center rounded-2xl p-1"
         onClick={changeBillingType}
       >
         <motion.div
@@ -24,7 +31,13 @@ export default function Billing() {
         ></motion.div>
       </div>
       <div className="relative">
-        <p>Yearly Billing</p>
+        <p
+          className={clsx(
+            ` ${billingType === 2 ? "text-my-slider-background" : "text-my-text-grayish-blue"}`,
+          )}
+        >
+          Yearly Billing
+        </p>
         <p className="bg-my-discount-background text-my-discount-text absolute top-1/2 -right-10 -translate-y-1/2 rounded-2xl px-[5px] text-[10px] font-bold">
           -25%
         </p>

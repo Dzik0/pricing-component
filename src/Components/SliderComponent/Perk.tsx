@@ -7,7 +7,7 @@ type PerkProps = {
 
 export default function Perk({ children }: PerkProps) {
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4 md:justify-start">
       <div>
         <img src={check} alt="" />
       </div>

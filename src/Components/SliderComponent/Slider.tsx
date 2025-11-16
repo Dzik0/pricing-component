@@ -22,8 +22,8 @@ export default function Slider() {
           type="range"
           name="slider"
           id="slider"
-          min={1}
-          max={data.length}
+          min={data[0].id}
+          max={data[data.length - 1].id}
           className="relative z-10"
           onChange={onChange}
         />
