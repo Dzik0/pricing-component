@@ -1,73 +1,112 @@
-# React + TypeScript + Vite
+# 💰 Pricing Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and interactive pricing component built with **React** and **TypeScript**.  
+Users can select pageview tiers and toggle between monthly and yearly billing, with real-time price updates and feature highlights.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Preview
 
-## React Compiler
+![Pricing Component Screenshot](/screenshot.jpg)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Live demo: [https://dzik0.github.io/pricing-component](https://dzik0.github.io/pricing-component)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 📊 **Dynamic Slider**  
+  Select pageview tiers from "10K" up to "200K" with smooth slider control.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 💸 **Billing Toggle**  
+  Switch between monthly and yearly billing modes with price recalculation.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- 💎 **Feature List**  
+  Displays perks like unlimited websites, data ownership, and email reports.
+
+- 🔄 **Responsive Design**  
+  Tailored layouts for desktop and mobile using Tailwind CSS.
+
+- 🤝 **Context API**  
+  Central state management for slider position, billing mode, and pricing.
+
+---
+
+## 🛠️ Tech Stack
+
+- React (with Context API & functional components)
+- TypeScript
+- Tailwind CSS for utility-first styling
+- Vite for development and build
+
+---
+
+## 📁 File Structure
+
+```
+src/
+├── Billing.tsx              # Billing toggle component
+├── Button.tsx               # CTA button component
+├── Perk.tsx                 # Individual perk component
+├── PerksContainer.tsx       # Container for perks list
+├── Price.tsx                # Display current price
+├── Slider.tsx               # Slider UI element
+├── SliderContainer.tsx      # Container for price, slider and billing sections
+├── SliderComponent.tsx      # Main component managing state and context
+└── context.ts               # Slider context export (optional)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧠 How It Works
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Pageview options:** defined as data array with IDs, views, and price.
+- **Slider control:** Adjusts displayed pageviews and price, updates bar length visually.
+- **Billing toggle:** Switch between monthly/yearly; yearly billing doubles the price (or apply discount logic).
+- **Centralized state:** Uses React Context to share slider value, pricing, and billing mode between components.
+
+---
+
+## 📦 Getting Started
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Dzik0/pricing-component.git
+   cd pricing-component
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## ✅ Future Improvements
+
+- [ ] Add discount calculation and display for yearly billing
+- [ ] Add accessibility improvements for slider and toggle
+- [ ] Integrate with backend or API for dynamic pricing
+- [ ] Add unit and integration tests
+
+---
+
+## 👨‍💻 Author
+
+**Dzik0**  
+GitHub: [https://github.com/Dzik0](https://github.com/Dzik0)
+
+---
+
+## 📝 License
+
+Open source under the [MIT License](LICENSE).
+
+---
